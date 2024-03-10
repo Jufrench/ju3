@@ -1,4 +1,4 @@
-import { useMantineTheme, lighten, Grid, SimpleGrid, Skeleton, rem, Center, Group, Box } from '@mantine/core';
+import { useMantineTheme, lighten, Grid, SimpleGrid, Skeleton, rem, Center, Group, Box, Badge } from '@mantine/core';
 
 const PRIMARY_COL_HEIGHT = rem(400);
 const skills: string[] = ["HTML","CSS","JavaScript","React","Vue","Ember","Node.js","Gatsby", "Next.js", "Mantine"];
@@ -57,6 +57,11 @@ export function LeadGrid() {
 
           <Grid.Col>
             <Box style={{...gridItemStyles, height: SECONDARY_COL_HEIGHT}}>
+              <Group gap="sm">
+                {skills.map((skill, index) => (
+                  <Badge key={index} color={theme.colors.myColor[6]}>{skill}</Badge>
+                ))}
+              </Group>
             </Box>
           </Grid.Col>
         </Grid>
@@ -65,19 +70,17 @@ export function LeadGrid() {
         =================== */}
         <Grid gutter="md">
 
-          <Grid.Col span={6}>
+          {/* <Grid.Col span={6}> */}
+          <Grid.Col>
             {/* <Skeleton height={SECONDARY_COL_HEIGHT} radius="md" animate={false} /> */}
-            <Box style={{...gridItemStyles, height: SECONDARY_COL_HEIGHT}}>
-
+            <Box c={{base: '#fff'}} style={{...gridItemStyles, background: theme.colors.myColor[7], height: SECONDARY_COL_HEIGHT}}>
+              Custom VSCode Theme coming soon...
             </Box>
           </Grid.Col>
 
-          <Grid.Col span={6}>
-            {/* <Skeleton height={SECONDARY_COL_HEIGHT} radius="md" animate={false} /> */}
-            <Box style={{...gridItemStyles, height: SECONDARY_COL_HEIGHT}}>
-
-            </Box>
-          </Grid.Col>
+          {/* <Grid.Col span={6}>
+            <Box style={{...gridItemStyles, height: SECONDARY_COL_HEIGHT}}></Box>
+          </Grid.Col> */}
 
           <Grid.Col>
             {/* <Skeleton height={PRIMARY_COL_HEIGHT} radius="md" animate={false} /> */}
