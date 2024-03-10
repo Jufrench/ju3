@@ -1,21 +1,22 @@
 import { useMantineTheme, lighten, Grid, SimpleGrid, Skeleton, rem, Center, Group, Box } from '@mantine/core';
 
 const PRIMARY_COL_HEIGHT = rem(400);
+const skills: string[] = ["HTML","CSS","JavaScript","React","Vue","Ember","Node.js","Gatsby", "Next.js", "Mantine"];
 
 export function LeadGrid() {
   const SECONDARY_COL_HEIGHT = `calc(${PRIMARY_COL_HEIGHT} / 2 - var(--mantine-spacing-md) / 2)`;
   const theme = useMantineTheme();
-  const themeBackground = lighten(theme.colors.myColor[0], 0.4);
+  const themeBackground = lighten(theme.colors.myColor[0], 0.1);
   const themeBorder = theme.colors.myColor[1];
 
   console.log('%ctheme', `color: ${theme.colors.lime[5]}`, theme.colors.lime[0]);
   console.log('%ctheme', 'color: tomato', theme.colors.lime[0]);
 
   const gridItemStyles = {
-    // height: PRIMARY_COL_HEIGHT,
     background: themeBackground,
-    border: `1px solid ${themeBorder}`,
+    border: `2px solid ${themeBorder}`,
     padding: rem(20),
+    borderRadius: rem(10),
   }
 
   return (
@@ -23,9 +24,11 @@ export function LeadGrid() {
 
         <Group justify="right"
           style={{
-            background: lighten(themeBackground, 0.3),
+            background: themeBackground,
             width: "80%", padding: "10px",
-            position: "fixed", top: 0
+            position: "fixed", top: 0,
+            borderBottomLeftRadius: rem(10),
+            borderBottomRightRadius: rem(10),
           }}>
           <a href="">Github</a><a href="">LinkedIn</a><a href="">Email</a>
           {/* icons in toolbar https://mantine.dev/guides/icons/ */}
@@ -50,7 +53,6 @@ export function LeadGrid() {
 
           <Grid.Col>
             <Box style={{...gridItemStyles, height: SECONDARY_COL_HEIGHT}}>
-              add badges here https://mantine.dev/core/badge/
             </Box>
           </Grid.Col>
         </Grid>
