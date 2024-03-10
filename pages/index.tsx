@@ -26,9 +26,10 @@ export function LeadGrid() {
 
         <Group justify="right"
           style={{
-            background: themeBackground,
-            border: gridItemStyles.border,
-            width: "80%", padding: "10px",
+            background: 'linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(242,243,246,1) 80%, rgba(255,255,255,1) 100%)', // yes!
+            // border: gridItemStyles.border,
+            width: "80%",
+            padding: "10px",
             position: "fixed", top: 0,
             borderBottomLeftRadius: rem(10),
             borderBottomRightRadius: rem(10),
