@@ -77,9 +77,9 @@ export function LeadGrid() {
   }
 
   return (
-    <Center h={{base: 'unset', sm: '100vh'}} pt={{base: rem(60), sm: rem(20)}}>
+    <Center h={{sm: '100vh'}} pt={{base: rem(60), sm: rem(20)}}>
 
-        <Group justify="right"
+        <Group justify="flex-end"
           style={{
             background: 'linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(242,243,246,1) 80%, rgba(255,255,255,1) 100%)',
             width: "80%",
