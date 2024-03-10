@@ -48,9 +48,8 @@ export function LeadGrid() {
             </Box>
           </Grid.Col>
 
-          <Grid.Col
-            style={{...gridItemStyles, height: SECONDARY_COL_HEIGHT}}>
-            <Box>
+          <Grid.Col>
+            <Box style={{...gridItemStyles, height: SECONDARY_COL_HEIGHT}}>
               add badges here https://mantine.dev/core/badge/
             </Box>
           </Grid.Col>
@@ -61,15 +60,24 @@ export function LeadGrid() {
         <Grid gutter="md">
 
           <Grid.Col span={6}>
-            <Skeleton height={SECONDARY_COL_HEIGHT} radius="md" animate={false} />
+            {/* <Skeleton height={SECONDARY_COL_HEIGHT} radius="md" animate={false} /> */}
+            <Box style={{...gridItemStyles, height: SECONDARY_COL_HEIGHT}}>
+
+            </Box>
           </Grid.Col>
 
           <Grid.Col span={6}>
-            <Skeleton height={SECONDARY_COL_HEIGHT} radius="md" animate={false} />
+            {/* <Skeleton height={SECONDARY_COL_HEIGHT} radius="md" animate={false} /> */}
+            <Box style={{...gridItemStyles, height: SECONDARY_COL_HEIGHT}}>
+
+            </Box>
           </Grid.Col>
 
           <Grid.Col>
-            <Skeleton height={PRIMARY_COL_HEIGHT} radius="md" animate={false} />
+            {/* <Skeleton height={PRIMARY_COL_HEIGHT} radius="md" animate={false} /> */}
+            <Box style={{...gridItemStyles, height: PRIMARY_COL_HEIGHT}}>
+
+            </Box>
           </Grid.Col>
 
         </Grid>
