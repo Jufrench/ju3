@@ -6,7 +6,9 @@ const skills: string[] = ["HTML","CSS","JavaScript","React","Vue","Ember","Node.
 export function LeadGrid() {
   const SECONDARY_COL_HEIGHT = `calc(${PRIMARY_COL_HEIGHT} / 2 - var(--mantine-spacing-md) / 2)`;
   const theme = useMantineTheme();
-  const themeBackground = lighten(theme.colors.myColor[0], 0.1);
+  const themeBackground = lighten(theme.colors.myColor[2], 0.7);
+  // const themeBackground = lighten(theme.colors.myColor[3], 0.8);
+  // const themeBackground = lighten(theme.colors.myColor[5], 0.9);
   const themeBorder = theme.colors.myColor[1];
 
   console.log('%ctheme', `color: ${theme.colors.lime[5]}`, theme.colors.lime[0]);
@@ -14,7 +16,7 @@ export function LeadGrid() {
 
   const gridItemStyles = {
     background: themeBackground,
-    border: `2px solid ${themeBorder}`,
+    border: `1px solid ${themeBorder}`,
     padding: rem(30),
     borderRadius: rem(10),
   }
@@ -25,6 +27,7 @@ export function LeadGrid() {
         <Group justify="right"
           style={{
             background: themeBackground,
+            border: gridItemStyles.border,
             width: "80%", padding: "10px",
             position: "fixed", top: 0,
             borderBottomLeftRadius: rem(10),
