@@ -1,7 +1,21 @@
-import { useMantineTheme, lighten, Grid, SimpleGrid, Skeleton, rem, Center, Group, Box, Badge } from '@mantine/core';
+import { useMantineTheme, lighten, Grid, SimpleGrid, Skeleton, rem, Center, Group, Stack, Box, Badge, Button, Paper } from '@mantine/core';
 
 const PRIMARY_COL_HEIGHT = rem(400);
 const skills: string[] = ["HTML","CSS","JavaScript","React","Vue","Ember","Node.js","Gatsby", "Next.js", "Mantine"];
+const projectList = [
+  {
+    id: 0,
+    title: "Jotty",
+    description: "A note taking app in the form of a rich text editor built with React, TypeScript, & Next.js.",
+    link: "https://jotty-pink.vercel.app/"
+  },
+  {
+    id: 1,
+    title: "Vuu-do",
+    description: "A to-do list app with a Vue.js & TypeScript frontend, a Node.js backend, Vite for bundling, and Next.js.",
+    link: null
+  },
+];
 
 export function LeadGrid() {
   const SECONDARY_COL_HEIGHT = `calc(${PRIMARY_COL_HEIGHT} / 2 - var(--mantine-spacing-md) / 2)`;
@@ -59,7 +73,7 @@ export function LeadGrid() {
             <Box style={{...gridItemStyles, height: SECONDARY_COL_HEIGHT}}>
               <Group gap="sm">
                 {skills.map((skill, index) => (
-                  <Badge key={index} color={theme.colors.myColor[6]}>{skill}</Badge>
+                  <Badge key={index} color={theme.colors.myColor[5]}>{skill}</Badge>
                 ))}
               </Group>
             </Box>
@@ -85,7 +99,16 @@ export function LeadGrid() {
           <Grid.Col>
             {/* <Skeleton height={PRIMARY_COL_HEIGHT} radius="md" animate={false} /> */}
             <Box style={{...gridItemStyles, height: PRIMARY_COL_HEIGHT}}>
-
+              {/* <Box h={{base: SECONDARY_COL_HEIGHT}} style={{border: '1px solid orange'}}></Box> */}
+              {/* <Paper shadow="sm" style={{height: SECONDARY_COL_HEIGHT}}>Hello</Paper> */}
+              <Stack h={{base: '100%'}}>
+              <Paper h={{base: '100%'}} shadow="xs">Hello</Paper>
+              <Group gap="sm">
+                {projectList.map((item, index) => (
+                  <Button key={index} color={theme.colors.myColor[7]}>{item.title}</Button>
+                ))}
+              </Group>
+              </Stack>
             </Box>
           </Grid.Col>
 
