@@ -19,11 +19,11 @@ export function LeadGrid() {
   }
 
   return (
-    <Center style={{ height: "100vh", paddingTop: "50px"}}>
+    <Center h={{base: 'unset', sm: '100vh'}} pt={{base: rem(60), sm: rem(20)}}>
 
         <Group justify="right"
           style={{
-            background: themeBackground,
+            background: lighten(themeBackground, 0.3),
             width: "80%", padding: "10px",
             position: "fixed", top: 0
           }}>
