@@ -15,7 +15,7 @@ export function LeadGrid() {
   const gridItemStyles = {
     background: themeBackground,
     border: `2px solid ${themeBorder}`,
-    padding: rem(20),
+    padding: rem(30),
     borderRadius: rem(10),
   }
 
