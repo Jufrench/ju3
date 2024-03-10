@@ -66,9 +66,6 @@ export function LeadGrid() {
   const themeBackground = lighten(theme.colors.myColor[2], 0.7);
   const themeBorder = theme.colors.myColor[1];
 
-  console.log('%ctheme', `color: ${theme.colors.lime[5]}`, theme.colors.lime[0]);
-  console.log('%ctheme', 'color: tomato', theme.colors.lime[0]);
-
   const gridItemStyles = {
     background: themeBackground,
     border: `1px solid ${themeBorder}`,
