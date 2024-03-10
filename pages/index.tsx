@@ -1,69 +1,91 @@
-import { Box, Button, Center, Group, Paper } from "@mantine/core";
-import { Container, Grid, SimpleGrid, Skeleton, rem } from '@mantine/core';
+import { useMantineTheme, lighten, Grid, SimpleGrid, Skeleton, rem, Center, Group, Box } from '@mantine/core';
 
 const PRIMARY_COL_HEIGHT = rem(400);
+const skills: string[] = ["HTML","CSS","JavaScript","React","Vue","Ember","Node.js","Gatsby", "Next.js", "Mantine"];
 
 export function LeadGrid() {
   const SECONDARY_COL_HEIGHT = `calc(${PRIMARY_COL_HEIGHT} / 2 - var(--mantine-spacing-md) / 2)`;
+  const theme = useMantineTheme();
+  const themeBackground = lighten(theme.colors.myColor[0], 0.1);
+  const themeBorder = theme.colors.myColor[1];
+
+  console.log('%ctheme', `color: ${theme.colors.lime[5]}`, theme.colors.lime[0]);
+  console.log('%ctheme', 'color: tomato', theme.colors.lime[0]);
+
+  const gridItemStyles = {
+    background: themeBackground,
+    border: `2px solid ${themeBorder}`,
+    padding: rem(30),
+    borderRadius: rem(10),
+  }
 
   return (
-    // <Container my="md">
-    //   <SimpleGrid cols={{ base: 1, sm: 2 }} spacing="md">
-    //     <Skeleton height={PRIMARY_COL_HEIGHT} radius="md" animate={false} />
-    //     <Grid gutter="md">
-    //       <Grid.Col>
-    //         <Skeleton height={SECONDARY_COL_HEIGHT} radius="md" animate={false} />
-    //       </Grid.Col>
-    //       <Grid.Col span={6}>
-    //         <Skeleton height={SECONDARY_COL_HEIGHT} radius="md" animate={false} />
-    //       </Grid.Col>
-    //       <Grid.Col span={6}>
-    //         <Skeleton height={SECONDARY_COL_HEIGHT} radius="md" animate={false} />
-    //       </Grid.Col>
-    //     </Grid>
-    //   </SimpleGrid>
-    // </Container>
-    // <Container style={{ position: "absolute", width: "100%", top: "50%", left: "50%", transform: "translate(-50%, -50%"}}>
-    <Center style={{ height: "100vh", paddingTop: "50px"}}>
-      {/* <Box style={{border: "1px solid tomato", position: "fixed", top: 0, width: "100%", display: "flex", justifyContent: "center"}}> */}
+    <Center h={{base: 'unset', sm: '100vh'}} pt={{base: rem(60), sm: rem(20)}}>
+
         <Group justify="right"
           style={{
-            background: "#eee", width: "80%", padding: "10px 0",
-            position: "fixed", top: 0
+            background: themeBackground,
+            width: "80%", padding: "10px",
+            position: "fixed", top: 0,
+            borderBottomLeftRadius: rem(10),
+            borderBottomRightRadius: rem(10),
           }}>
           <a href="">Github</a><a href="">LinkedIn</a><a href="">Email</a>
+          {/* icons in toolbar https://mantine.dev/guides/icons/ */}
         </Group>
-      {/* </Box> */}
+
+      {/* WRAPPER GRID
+      =================== */}
       <SimpleGrid cols={{ base: 1, sm: 2 }} spacing="md" style={{width: "80%"}}>
+
+        {/* FIRST GRID
+        =================== */}
         <Grid gutter="md">
-        <Grid.Col>
-          <Box style={{height: PRIMARY_COL_HEIGHT, background: "rgba(118, 124, 145, 0.1)"}}>
-          {/* <Skeleton height={PRIMARY_COL_HEIGHT} radius="md" animate={false} /> */}
-          <h1 style={{ margin: "0", display: "flex", flexDirection: "column"}}>
-            <span>Hello!</span>
-            <span>My name is Julian French</span>
-            <span>I'm a Web Developer based in Kansas City!</span>
-          </h1>
-          </Box>
-        </Grid.Col>
-        <Grid.Col style={{border: "1px solid tomato"}}>
-          <Skeleton height={SECONDARY_COL_HEIGHT} radius="md" animate={false} />
-        </Grid.Col>
-        </Grid>
-        <Grid gutter="md">
-          <Grid.Col span={6}>
-            <Skeleton height={SECONDARY_COL_HEIGHT} radius="md" animate={false} />
-          </Grid.Col>
-          <Grid.Col span={6}>
-            <Skeleton height={SECONDARY_COL_HEIGHT} radius="md" animate={false} />
-          </Grid.Col>
           <Grid.Col>
-            <Skeleton height={PRIMARY_COL_HEIGHT} radius="md" animate={false} />
+            <Box style={{...gridItemStyles, height: PRIMARY_COL_HEIGHT}}>
+            <h1 style={{ margin: "0", display: "flex", flexDirection: "column"}}>
+              <span>Hello!</span>
+              <span>My name is Julian French</span>
+              <span>I'm a Web Developer based in Kansas City!</span>
+            </h1>
+            </Box>
+          </Grid.Col>
+
+          <Grid.Col>
+            <Box style={{...gridItemStyles, height: SECONDARY_COL_HEIGHT}}>
+            </Box>
           </Grid.Col>
         </Grid>
+
+        {/* SECOND GRID
+        =================== */}
+        <Grid gutter="md">
+
+          <Grid.Col span={6}>
+            {/* <Skeleton height={SECONDARY_COL_HEIGHT} radius="md" animate={false} /> */}
+            <Box style={{...gridItemStyles, height: SECONDARY_COL_HEIGHT}}>
+
+            </Box>
+          </Grid.Col>
+
+          <Grid.Col span={6}>
+            {/* <Skeleton height={SECONDARY_COL_HEIGHT} radius="md" animate={false} /> */}
+            <Box style={{...gridItemStyles, height: SECONDARY_COL_HEIGHT}}>
+
+            </Box>
+          </Grid.Col>
+
+          <Grid.Col>
+            {/* <Skeleton height={PRIMARY_COL_HEIGHT} radius="md" animate={false} /> */}
+            <Box style={{...gridItemStyles, height: PRIMARY_COL_HEIGHT}}>
+
+            </Box>
+          </Grid.Col>
+
+        </Grid>
+
       </SimpleGrid>
       </Center>
-    // </Container>
   );
 }
 
