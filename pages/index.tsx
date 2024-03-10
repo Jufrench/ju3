@@ -104,7 +104,7 @@ export function LeadGrid() {
               <h2 style={{ margin: "0", display: "flex", flexDirection: "column"}}>
                 <span>Hello!</span>
                 <span>My name is Julian French.</span>
-                <span>I'm a Web Developer based in Kansas City!</span>
+                <span>I&#39;m a Web Developer based in Kansas City!</span>
               </h2>
             </Box>
           </Grid.Col>
