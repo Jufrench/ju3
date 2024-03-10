@@ -1,6 +1,29 @@
-import { useMantineTheme, lighten, Grid, SimpleGrid, Skeleton, rem, Center, Group, Stack, Box, Badge, Button, Paper } from '@mantine/core';
+import { useMantineTheme, lighten, Grid, SimpleGrid, rem, Center, Group, Stack, Box, Badge, Button, Paper, Anchor } from '@mantine/core';
+import { IconBrandGithubFilled, IconBrandLinkedin, IconMailFilled } from '@tabler/icons-react';
 
 const PRIMARY_COL_HEIGHT = rem(400);
+const contactInfo = [
+  {
+    name: "Github",
+    link: "https://www.github.com/Jufrench",
+    icon: <IconBrandGithubFilled />
+  },
+  {
+    name: "LinkedIn",
+    link: "https://www.linkedin.com/in/julesfrench/",
+    icon: <IconBrandLinkedin />
+  },
+  {
+    name: "Email",
+    link: "mailto:ju.french@gmail.com",
+    icon: <IconMailFilled />
+  },
+  {
+    name: "Ko-Fi",
+    link: "https://ko-fi.com/moijules",
+    customIcon: <KofiIcon />
+  }
+]
 const skills: string[] = ["HTML","CSS","JavaScript","React","Vue","Ember","Node.js","Gatsby", "Next.js", "Mantine"];
 const projectList = [
   {
@@ -17,12 +40,30 @@ const projectList = [
   },
 ];
 
+function KofiIcon() {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="currentColor"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="1"
+      viewBox="-2 2 34 24"
+      // viewBox="0 0 24 24"
+      // style={{ width: rem(size), height: rem(size), ...style }}
+      style={{ width: 'auto', height: rem(20) }}
+    
+    >
+      <path d="M31.844 11.932c-1.032-5.448-6.48-6.125-6.48-6.125h-24.4c-0.808 0-0.907 1.063-0.907 1.063s-0.109 9.767-0.027 15.767c0.22 3.228 3.448 3.561 3.448 3.561s11.021-0.031 15.953-0.067c3.251-0.568 3.579-3.423 3.541-4.98 5.808 0.323 9.896-3.776 8.871-9.219zM17.093 16.615c-1.661 1.932-5.348 5.297-5.348 5.297s-0.161 0.161-0.417 0.031c-0.099-0.073-0.14-0.12-0.14-0.12-0.595-0.588-4.491-4.063-5.381-5.271-0.943-1.287-1.385-3.599-0.119-4.948 1.265-1.344 4.005-1.448 5.817 0.541 0 0 2.083-2.375 4.625-1.281 2.536 1.095 2.443 4.016 0.963 5.751zM25.323 17.251c-1.24 0.156-2.244 0.036-2.244 0.036v-7.573h2.359c0 0 2.631 0.735 2.631 3.516 0 2.552-1.313 3.557-2.745 4.021z"/>
+    </svg>
+  );
+}
+
 export function LeadGrid() {
   const SECONDARY_COL_HEIGHT = `calc(${PRIMARY_COL_HEIGHT} / 2 - var(--mantine-spacing-md) / 2)`;
   const theme = useMantineTheme();
   const themeBackground = lighten(theme.colors.myColor[2], 0.7);
-  // const themeBackground = lighten(theme.colors.myColor[3], 0.8);
-  // const themeBackground = lighten(theme.colors.myColor[5], 0.9);
   const themeBorder = theme.colors.myColor[1];
 
   console.log('%ctheme', `color: ${theme.colors.lime[5]}`, theme.colors.lime[0]);
@@ -40,16 +81,18 @@ export function LeadGrid() {
 
         <Group justify="right"
           style={{
-            background: 'linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(242,243,246,1) 80%, rgba(255,255,255,1) 100%)', // yes!
-            // border: gridItemStyles.border,
+            background: 'linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(242,243,246,1) 80%, rgba(255,255,255,1) 100%)',
             width: "80%",
             padding: "10px",
             position: "fixed", top: 0,
             borderBottomLeftRadius: rem(10),
             borderBottomRightRadius: rem(10),
           }}>
-          <a href="">Github</a><a href="">LinkedIn</a><a href="">Email</a>
-          {/* icons in toolbar https://mantine.dev/guides/icons/ */}
+          {contactInfo.map((item, index) => (
+            <Anchor key={index} href={item.link} c={{base: theme.colors.myColor[7]}} target="_blank" rel="noopener noreferrer">
+              {item.hasOwnProperty('customIcon') ? item.customIcon : item.icon}
+            </Anchor>
+          ))}
         </Group>
 
       {/* WRAPPER GRID
@@ -61,11 +104,11 @@ export function LeadGrid() {
         <Grid gutter="md">
           <Grid.Col>
             <Box style={{...gridItemStyles, height: PRIMARY_COL_HEIGHT}}>
-            <h1 style={{ margin: "0", display: "flex", flexDirection: "column"}}>
-              <span>Hello!</span>
-              <span>My name is Julian French</span>
-              <span>I'm a Web Developer based in Kansas City!</span>
-            </h1>
+              <h2 style={{ margin: "0", display: "flex", flexDirection: "column"}}>
+                <span>Hello!</span>
+                <span>My name is Julian French.</span>
+                <span>I'm a Web Developer based in Kansas City!</span>
+              </h2>
             </Box>
           </Grid.Col>
 
@@ -86,7 +129,6 @@ export function LeadGrid() {
 
           {/* <Grid.Col span={6}> */}
           <Grid.Col>
-            {/* <Skeleton height={SECONDARY_COL_HEIGHT} radius="md" animate={false} /> */}
             <Box c={{base: '#fff'}} style={{...gridItemStyles, background: theme.colors.myColor[7], height: SECONDARY_COL_HEIGHT}}>
               Custom VSCode Theme coming soon...
             </Box>
@@ -97,17 +139,14 @@ export function LeadGrid() {
           </Grid.Col> */}
 
           <Grid.Col>
-            {/* <Skeleton height={PRIMARY_COL_HEIGHT} radius="md" animate={false} /> */}
             <Box style={{...gridItemStyles, height: PRIMARY_COL_HEIGHT}}>
-              {/* <Box h={{base: SECONDARY_COL_HEIGHT}} style={{border: '1px solid orange'}}></Box> */}
-              {/* <Paper shadow="sm" style={{height: SECONDARY_COL_HEIGHT}}>Hello</Paper> */}
               <Stack h={{base: '100%'}}>
-              <Paper h={{base: '100%'}} shadow="xs">Hello</Paper>
-              <Group gap="sm">
-                {projectList.map((item, index) => (
-                  <Button key={index} color={theme.colors.myColor[7]}>{item.title}</Button>
-                ))}
-              </Group>
+                <Paper h={{base: '100%'}} shadow="xs">Project info soon...</Paper>
+                <Group gap="sm">
+                  {projectList.map((item, index) => (
+                    <Button key={index} color={theme.colors.myColor[7]}>{item.title}</Button>
+                  ))}
+                </Group>
               </Stack>
             </Box>
           </Grid.Col>
@@ -121,9 +160,6 @@ export function LeadGrid() {
 
 export default function IndexPage() {
   return (
-    // <Group mt={50} justify="center">
-    //   <Button size="xl">Welcome to Mantine!</Button>
-    // </Group>
     <LeadGrid />
   );
 }
