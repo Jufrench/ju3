@@ -24,7 +24,7 @@ const contactInfo = [
     customIcon: <KofiIcon />
   }
 ]
-const skills: string[] = ["HTML","CSS","JavaScript","React","Vue","Ember","Node.js","Gatsby", "Next.js", "Mantine"];
+const skills: string[] = ["HTML","CSS","JavaScript","React","Vue","Ember","Node.js","Gatsby", "Next.js", "Mantine", "Bootstrap", "Oracle SQL"];
 const projectList = [
   {
     id: 0,
