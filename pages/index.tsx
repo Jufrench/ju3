@@ -1,5 +1,7 @@
 import { useMantineTheme, lighten, Grid, SimpleGrid, rem, Center, Group, Stack, Box, Badge, Button, Paper, Anchor } from '@mantine/core';
+import { Carousel } from '@mantine/carousel';
 import { IconBrandGithubFilled, IconBrandLinkedin, IconMailFilled } from '@tabler/icons-react';
+import '@mantine/carousel/styles.css';
 
 const PRIMARY_COL_HEIGHT = rem(400);
 const contactInfo = [
@@ -71,7 +73,11 @@ export function LeadGrid() {
     border: `1px solid ${themeBorder}`,
     padding: rem(30),
     borderRadius: rem(10),
-  }
+  };
+
+  const projectCardStyles = {
+    padding: rem(30),
+  };
 
   return (
     <Center h={{sm: '100vh'}} pt={{base: rem(60), sm: rem(20)}}>
@@ -135,17 +141,35 @@ export function LeadGrid() {
             <Box style={{...gridItemStyles, height: SECONDARY_COL_HEIGHT}}></Box>
           </Grid.Col> */}
 
-          <Grid.Col>
-            <Box style={{...gridItemStyles, height: PRIMARY_COL_HEIGHT}}>
-              <Stack h={{base: '100%'}}>
-                <Paper h={{base: '100%'}} shadow="xs">Project info soon...</Paper>
-                <Group gap="sm">
-                  {projectList.map((item, index) => (
-                    <Button key={index} color={theme.colors.myColor[7]}>{item.title}</Button>
-                  ))}
-                </Group>
-              </Stack>
-            </Box>
+          <Grid.Col style={{...gridItemStyles, height: PRIMARY_COL_HEIGHT, border: '1px solid dodgerblue', display: 'flex'}}>
+            <Carousel
+              withIndicators
+              height="100%"
+              slideSize="100%"
+              slideGap="sm"
+              loop
+              slidesToScroll={1}
+              align="start"
+              style={{border: '1px solid limegreen', flex: 1, width: "100%"}}>
+              <Carousel.Slide>
+                <Paper w="100%" p={rem(30)} style={{ border: '1px solid tomato'}} h={{base: '100%'}} shadow="xs">
+                  Rich Tech Editor
+                  <Button variant="white" color="dark">View App ➡️</Button>
+                </Paper>
+              </Carousel.Slide>
+              <Carousel.Slide>
+                <Paper w="100%" p={rem(30)} style={{ border: '1px solid tomato'}} h={{base: '100%'}} shadow="xs">
+                  Todo List
+                  <Button variant="white" color="dark">View App ➡️</Button>
+                </Paper>
+              </Carousel.Slide>
+              <Carousel.Slide>
+                <Paper w="100%" p={rem(30)} style={{ border: '1px solid tomato'}} h={{base: '100%'}} shadow="xs">
+                  Map?
+                  <Button variant="white" color="dark">View App ➡️</Button>
+                </Paper>
+              </Carousel.Slide>
+            </Carousel>
           </Grid.Col>
 
         </Grid>
