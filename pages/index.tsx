@@ -1,7 +1,8 @@
-import { useMantineTheme, lighten, Grid, SimpleGrid, rem, Center, Group, Stack, Box, Badge, Button, Paper, Anchor } from '@mantine/core';
+import { useMantineTheme, lighten, Grid, SimpleGrid, rem, Center, Group, Stack, Box, Badge, Button, Paper, Anchor, Title, Text } from '@mantine/core';
 import { Carousel } from '@mantine/carousel';
-import { IconBrandGithubFilled, IconBrandLinkedin, IconMailFilled } from '@tabler/icons-react';
+import { IconBrandGithubFilled, IconBrandLinkedin, IconMailFilled, IconArrowRight } from '@tabler/icons-react';
 import '@mantine/carousel/styles.css';
+import { dir } from 'console';
 
 const PRIMARY_COL_HEIGHT = rem(400);
 const contactInfo = [
@@ -75,8 +76,11 @@ export function LeadGrid() {
     borderRadius: rem(10),
   };
 
-  const projectCardStyles = {
+  const projectCardStyles:React.CSSProperties = {
     padding: rem(30),
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "start",
   };
 
   return (
@@ -132,7 +136,7 @@ export function LeadGrid() {
 
           {/* <Grid.Col span={6}> */}
           <Grid.Col>
-            <Box c={{base: '#fff'}} style={{...gridItemStyles, background: theme.colors.myColor[7], height: SECONDARY_COL_HEIGHT}}>
+            <Box c={{base: '#fff'}} style={{...gridItemStyles, background: theme.colors.myColor[3], height: SECONDARY_COL_HEIGHT}}>
               Custom VSCode Theme coming soon...
             </Box>
           </Grid.Col>
@@ -141,7 +145,7 @@ export function LeadGrid() {
             <Box style={{...gridItemStyles, height: SECONDARY_COL_HEIGHT}}></Box>
           </Grid.Col> */}
 
-          <Grid.Col style={{...gridItemStyles, height: PRIMARY_COL_HEIGHT, border: '1px solid dodgerblue', display: 'flex'}}>
+          <Grid.Col style={{...gridItemStyles, height: PRIMARY_COL_HEIGHT, display: 'flex'}}>
             <Carousel
               withIndicators
               height="100%"
@@ -150,23 +154,42 @@ export function LeadGrid() {
               loop
               slidesToScroll={1}
               align="start"
-              style={{border: '1px solid limegreen', flex: 1, width: "100%"}}>
+              style={{flex: 1, width: "100%"}}>
               <Carousel.Slide>
-                <Paper w="100%" p={rem(30)} style={{ border: '1px solid tomato'}} h={{base: '100%'}} shadow="xs">
-                  Rich Tech Editor
-                  <Button variant="white" color="dark">View App ➡️</Button>
+                <Paper w="100%" style={{...projectCardStyles}} h={{base: '100%'}} shadow="xs">
+                  <Box style={{flexGrow: 1}}>
+                    <Title order={3}>Jotty</Title>
+                    <Text> A note taking app in the form of a rich text editor built with React, TypeScript, & Next.js.</Text>
+                  </Box>
+                  <Button variant="filled"
+                    color={theme.colors.myColor[7]}
+                    rightSection={<IconArrowRight size={14} />}>
+                      View App
+                  </Button>
                 </Paper>
               </Carousel.Slide>
               <Carousel.Slide>
-                <Paper w="100%" p={rem(30)} style={{ border: '1px solid tomato'}} h={{base: '100%'}} shadow="xs">
-                  Todo List
-                  <Button variant="white" color="dark">View App ➡️</Button>
+                <Paper w="100%" style={{...projectCardStyles}} h={{base: '100%'}} shadow="xs">
+                  <Box style={{flexGrow: 1}}>
+                    <Title order={3}>Jotty</Title>
+                    <Text> A note taking app in the form of a rich text editor built with React, TypeScript, & Next.js.</Text>
+                  </Box>
+                  <Button variant="filled"
+                    color={theme.colors.myColor[7]}
+                    rightSection={<IconArrowRight size={14} />}>View App
+                </Button>
                 </Paper>
               </Carousel.Slide>
               <Carousel.Slide>
-                <Paper w="100%" p={rem(30)} style={{ border: '1px solid tomato'}} h={{base: '100%'}} shadow="xs">
-                  Map?
-                  <Button variant="white" color="dark">View App ➡️</Button>
+                <Paper w="100%" style={{...projectCardStyles}} h={{base: '100%'}} shadow="xs">
+                  <Box style={{flexGrow: 1}}>
+                    <Title order={3}>Jotty</Title>
+                    <Text> A note taking app in the form of a rich text editor built with React, TypeScript, & Next.js.</Text>
+                  </Box>
+                  <Button variant="filled"
+                    color={theme.colors.myColor[7]}
+                    rightSection={<IconArrowRight size={14} />}>View App
+                </Button>
                 </Paper>
               </Carousel.Slide>
             </Carousel>
