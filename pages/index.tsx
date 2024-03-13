@@ -145,7 +145,7 @@ export function LeadGrid() {
             <Box style={{...gridItemStyles, height: SECONDARY_COL_HEIGHT}}></Box>
           </Grid.Col> */}
 
-          <Grid.Col style={{border: "1px solid tomato"}}>
+          <Grid.Col>
             <Box style={{...gridItemStyles, height: PRIMARY_COL_HEIGHT, display: 'flex', paddingBottom: rem(10)}}>
               <Carousel
                 withIndicators
@@ -158,42 +158,60 @@ export function LeadGrid() {
                 style={{flex: 1, width: "100%"}}>
                 <Carousel.Slide>
                   <Box style={{height: "100%"}}>
-                  <Paper w="100%" style={{...projectCardStyles}} h={{base: '90%'}} shadow="lg">
-                    <Box style={{flexGrow: 1}}>
-                      <Title order={3}>Jotty</Title>
-                      <Text> A note taking app in the form of a rich text editor built with React, TypeScript, & Next.js.</Text>
-                    </Box>
-                    <Button variant="filled"
-                      color="#f06418"
-                      rightSection={<IconArrowRight size={14} />}>
-                        View App
-                    </Button>
-                  </Paper>
+                    <Paper w="100%" style={{...projectCardStyles}} h={{base: '90%'}} shadow="lg">
+                      <Box style={{flexGrow: 1}}>
+                        <Title order={3}>Jotty</Title>
+                        <Text> A note taking app in the form of a rich text editor - React, TypeScript, & Next.js</Text>
+                      </Box>
+                      <Button variant="filled"
+                        color="#f06418"
+                        rightSection={<IconArrowRight size={14} />}>
+                          View App
+                      </Button>
+                    </Paper>
                   </Box>
                 </Carousel.Slide>
                 <Carousel.Slide>
-                  <Paper w="100%" style={{...projectCardStyles}} h={{base: '100%'}} shadow="lg">
+                <Box style={{height: "100%"}}>
+                  <Paper w="100%" style={{...projectCardStyles}} h={{base: '90%'}} shadow="lg">
                     <Box style={{flexGrow: 1}}>
-                      <Title order={3}>Slide 2</Title>
-                      <Text> A note taking app in the form of a rich text editor built with React, TypeScript, & Next.js.</Text>
+                      <Title order={3}>Banderas</Title>
+                      <Text>Flag viewing & quiz app - React, TypeScript, Next.js, Vercel</Text>
                     </Box>
                     <Button variant="filled"
                       color="#f06418"
                       rightSection={<IconArrowRight size={14} />}>View App
-                  </Button>
+                    </Button>
                   </Paper>
+                </Box>
                 </Carousel.Slide>
                 <Carousel.Slide>
-                  <Paper w="100%" style={{...projectCardStyles}} h={{base: '100%'}} shadow="lg">
+                <Box style={{height: "100%"}}>
+                  <Paper w="100%" style={{...projectCardStyles}} h={{base: '90%'}} shadow="lg">
                     <Box style={{flexGrow: 1}}>
-                      <Title order={3}>Mapa</Title>
-                      <Text>A map app showing my travels.</Text>
+                      <Title order={3}>Teux Deux</Title>
+                      <Text>Traditional Todo app - React, TypeScript, Redux, Next.js, Vercel</Text>
                     </Box>
                     <Button variant="filled"
                       color="#f06418"
                       rightSection={<IconArrowRight size={14} />}>View App
-                  </Button>
+                    </Button>
                   </Paper>
+                </Box>
+                </Carousel.Slide>
+                <Carousel.Slide>
+                  <Box style={{height: "100%"}}>
+                    <Paper w="100%" style={{...projectCardStyles}} h={{base: '90%'}} shadow="lg">
+                      <Box style={{flexGrow: 1}}>
+                        <Title order={3}>Mapa</Title>
+                        <Text>A map app showing my travels - React, TypeScript, Next.js, Vercel</Text>
+                      </Box>
+                      <Button variant="filled"
+                        color="#f06418"
+                        rightSection={<IconArrowRight size={14} />}>View App
+                      </Button>
+                    </Paper>
+                  </Box>
                 </Carousel.Slide>
               </Carousel>
             </Box>
