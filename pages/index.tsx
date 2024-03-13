@@ -145,54 +145,58 @@ export function LeadGrid() {
             <Box style={{...gridItemStyles, height: SECONDARY_COL_HEIGHT}}></Box>
           </Grid.Col> */}
 
-          <Grid.Col style={{...gridItemStyles, height: PRIMARY_COL_HEIGHT, display: 'flex'}}>
-            <Carousel
-              withIndicators
-              height="100%"
-              slideSize="100%"
-              slideGap="sm"
-              loop
-              slidesToScroll={1}
-              align="start"
-              style={{flex: 1, width: "100%"}}>
-              <Carousel.Slide>
-                <Paper w="100%" style={{...projectCardStyles}} h={{base: '100%'}} shadow="xs">
-                  <Box style={{flexGrow: 1}}>
-                    <Title order={3}>Jotty</Title>
-                    <Text> A note taking app in the form of a rich text editor built with React, TypeScript, & Next.js.</Text>
+          <Grid.Col style={{border: "1px solid tomato"}}>
+            <Box style={{...gridItemStyles, height: PRIMARY_COL_HEIGHT, display: 'flex', paddingBottom: rem(10)}}>
+              <Carousel
+                withIndicators
+                height="100%"
+                slideSize="100%"
+                slideGap="sm"
+                loop
+                slidesToScroll={1}
+                align="start"
+                style={{flex: 1, width: "100%"}}>
+                <Carousel.Slide>
+                  <Box style={{height: "100%"}}>
+                  <Paper w="100%" style={{...projectCardStyles}} h={{base: '90%'}} shadow="lg">
+                    <Box style={{flexGrow: 1}}>
+                      <Title order={3}>Jotty</Title>
+                      <Text> A note taking app in the form of a rich text editor built with React, TypeScript, & Next.js.</Text>
+                    </Box>
+                    <Button variant="filled"
+                      color="#f06418"
+                      rightSection={<IconArrowRight size={14} />}>
+                        View App
+                    </Button>
+                  </Paper>
                   </Box>
-                  <Button variant="filled"
-                    color={theme.colors.myColor[7]}
-                    rightSection={<IconArrowRight size={14} />}>
-                      View App
+                </Carousel.Slide>
+                <Carousel.Slide>
+                  <Paper w="100%" style={{...projectCardStyles}} h={{base: '100%'}} shadow="lg">
+                    <Box style={{flexGrow: 1}}>
+                      <Title order={3}>Slide 2</Title>
+                      <Text> A note taking app in the form of a rich text editor built with React, TypeScript, & Next.js.</Text>
+                    </Box>
+                    <Button variant="filled"
+                      color="#f06418"
+                      rightSection={<IconArrowRight size={14} />}>View App
                   </Button>
-                </Paper>
-              </Carousel.Slide>
-              <Carousel.Slide>
-                <Paper w="100%" style={{...projectCardStyles}} h={{base: '100%'}} shadow="xs">
-                  <Box style={{flexGrow: 1}}>
-                    <Title order={3}>Jotty</Title>
-                    <Text> A note taking app in the form of a rich text editor built with React, TypeScript, & Next.js.</Text>
-                  </Box>
-                  <Button variant="filled"
-                    color={theme.colors.myColor[7]}
-                    rightSection={<IconArrowRight size={14} />}>View App
-                </Button>
-                </Paper>
-              </Carousel.Slide>
-              <Carousel.Slide>
-                <Paper w="100%" style={{...projectCardStyles}} h={{base: '100%'}} shadow="xs">
-                  <Box style={{flexGrow: 1}}>
-                    <Title order={3}>Jotty</Title>
-                    <Text> A note taking app in the form of a rich text editor built with React, TypeScript, & Next.js.</Text>
-                  </Box>
-                  <Button variant="filled"
-                    color={theme.colors.myColor[7]}
-                    rightSection={<IconArrowRight size={14} />}>View App
-                </Button>
-                </Paper>
-              </Carousel.Slide>
-            </Carousel>
+                  </Paper>
+                </Carousel.Slide>
+                <Carousel.Slide>
+                  <Paper w="100%" style={{...projectCardStyles}} h={{base: '100%'}} shadow="lg">
+                    <Box style={{flexGrow: 1}}>
+                      <Title order={3}>Mapa</Title>
+                      <Text>A map app showing my travels.</Text>
+                    </Box>
+                    <Button variant="filled"
+                      color="#f06418"
+                      rightSection={<IconArrowRight size={14} />}>View App
+                  </Button>
+                  </Paper>
+                </Carousel.Slide>
+              </Carousel>
+            </Box>
           </Grid.Col>
 
         </Grid>
