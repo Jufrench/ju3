@@ -166,7 +166,7 @@ export function LeadGrid() {
 
                     <Paper radius="sm" style={{...projectCardStyles}} h={{base: '90%'}} shadow="xl">
                       <Box style={{flexGrow: 1}}>
-                        <Title order={3} style={{...titleBorderRadius, padding: rem(20), paddingLeft: rem(30), background: "#f06418"}}>Jotty</Title>
+                        <Title order={3} style={{...titleBorderRadius, padding: rem(20), paddingLeft: rem(30), background: "#f06418", color: "#fff"}}>Jotty</Title>
                         <Text style={{padding: rem(30)}}>A note taking app in the form of a rich text editor - React, TypeScript, & Next.js</Text>
                       </Box>
                       <Button variant="filled"
@@ -232,7 +232,7 @@ export function LeadGrid() {
                     </Paper>
                   </Box>
                 </Carousel.Slide>
-                
+
               </Carousel>
             </Box>
           </Grid.Col>
