@@ -1,8 +1,7 @@
-import { useMantineTheme, lighten, Grid, SimpleGrid, rem, Center, Group, Stack, Box, Badge, Button, Paper, Anchor, Title, Text } from '@mantine/core';
+import { useMantineTheme, lighten, Grid, SimpleGrid, rem, Center, Group, Box, Badge, Button, Paper, Anchor, Title, Text } from '@mantine/core';
 import { Carousel } from '@mantine/carousel';
 import { IconBrandGithubFilled, IconBrandLinkedin, IconMailFilled, IconArrowRight } from '@tabler/icons-react';
 import '@mantine/carousel/styles.css';
-import { dir } from 'console';
 
 const PRIMARY_COL_HEIGHT = rem(400);
 const contactInfo = [
@@ -28,20 +27,20 @@ const contactInfo = [
   }
 ]
 const skills: string[] = ["HTML","CSS","JavaScript","React","Vue","Ember","Node.js","Gatsby", "Next.js", "Mantine", "Bootstrap", "Oracle SQL"];
-const projectList = [
-  {
-    id: 0,
-    title: "Jotty",
-    description: "A note taking app in the form of a rich text editor built with React, TypeScript, & Next.js.",
-    link: "https://jotty-pink.vercel.app/"
-  },
-  {
-    id: 1,
-    title: "Vuu-do",
-    description: "A to-do list app with a Vue.js & TypeScript frontend, a Node.js backend, Vite for bundling, and Next.js.",
-    link: null
-  },
-];
+// const projectList = [
+//   {
+//     id: 0,
+//     title: "Jotty",
+//     description: "A note taking app in the form of a rich text editor built with React, TypeScript, & Next.js.",
+//     link: "https://jotty-pink.vercel.app/"
+//   },
+//   {
+//     id: 1,
+//     title: "Vuu-do",
+//     description: "A to-do list app with a Vue.js & TypeScript frontend, a Node.js backend, Vite for bundling, and Next.js.",
+//     link: null
+//   },
+// ];
 
 function KofiIcon() {
   return (
@@ -63,6 +62,18 @@ function KofiIcon() {
   );
 }
 
+const projectCardStyles:React.CSSProperties = {
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "start",
+  width: "97%"
+};
+
+const titleBorderRadius = {
+  borderTopLeftRadius: "4px",
+  borderTopRightRadius: "4px"
+};
+
 export function LeadGrid() {
   const SECONDARY_COL_HEIGHT = `calc(${PRIMARY_COL_HEIGHT} / 2 - var(--mantine-spacing-md) / 2)`;
   const theme = useMantineTheme();
@@ -74,13 +85,6 @@ export function LeadGrid() {
     border: `1px solid ${themeBorder}`,
     padding: rem(30),
     borderRadius: rem(10),
-  };
-
-  const projectCardStyles:React.CSSProperties = {
-    padding: rem(30),
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "start",
   };
 
   return (
@@ -156,63 +160,79 @@ export function LeadGrid() {
                 slidesToScroll={1}
                 align="start"
                 style={{flex: 1, width: "100%"}}>
+
                 <Carousel.Slide>
-                  <Box style={{height: "100%"}}>
-                    <Paper w="100%" style={{...projectCardStyles}} h={{base: '90%'}} shadow="lg">
+                  <Box style={{height: "100%", display: "flex", justifyContent: "center"}}>
+
+                    <Paper radius="sm" style={{...projectCardStyles}} h={{base: '90%'}} shadow="xl">
                       <Box style={{flexGrow: 1}}>
-                        <Title order={3}>Jotty</Title>
-                        <Text> A note taking app in the form of a rich text editor - React, TypeScript, & Next.js</Text>
+                        <Title order={3} style={{...titleBorderRadius, padding: rem(20), paddingLeft: rem(30), background: "#f06418"}}>Jotty</Title>
+                        <Text style={{padding: rem(30)}}>A note taking app in the form of a rich text editor - React, TypeScript, & Next.js</Text>
                       </Box>
                       <Button variant="filled"
                         color="#f06418"
-                        rightSection={<IconArrowRight size={14} />}>
+                        rightSection={<IconArrowRight size={14} />}
+                        ml={rem(30)} mb={rem(30)}>
+                          View App
+                      </Button>
+                    </Paper>
+
+                  </Box>
+                </Carousel.Slide>
+                
+                <Carousel.Slide>
+                <Box style={{height: "100%", display: "flex", justifyContent: "center"}}>
+                  <Paper radius="sm" style={{...projectCardStyles}} h={{base: '90%'}} shadow="lg">
+                    <Box style={{flexGrow: 1}}>
+                      <Title order={3} style={{...titleBorderRadius, padding: rem(20), paddingLeft: rem(30), background: "#c91a25", color: "#ffffff"}}>Banderas</Title>
+                      <Text style={{padding: rem(30)}}>Flag viewing & quiz app - React, TypeScript, Next.js, Vercel</Text>
+                    </Box>
+                    <Button variant="filled"
+                      color="#c91a25"
+                      rightSection={<IconArrowRight size={14} />}
+                      ml={rem(30)} mb={rem(30)}>
+                        View App
+                    </Button>
+                  </Paper>
+                </Box>
+                </Carousel.Slide>
+
+                <Carousel.Slide>
+                <Box style={{height: "100%", display: "flex", justifyContent: "center"}}>
+                  <Paper radius="sm" style={{...projectCardStyles}} h={{base: '90%'}} shadow="lg">
+                    <Box style={{flexGrow: 1}}>
+                      <Title order={3} style={{...titleBorderRadius, padding: rem(20), paddingLeft: rem(30), background: "#d9d02f"}}>Teux Deux</Title>
+                      <Text style={{padding: rem(30)}}>Traditional Todo app - React, TypeScript, Redux, Next.js, Vercel</Text>
+                    </Box>
+                    <Button variant="filled"
+                      color="#d9d02f"
+                      rightSection={<IconArrowRight size={14} />}
+                      ml={rem(30)} mb={rem(30)}
+                      style={{color: "#000000"}}>
+                        View App
+                    </Button>
+                  </Paper>
+                </Box>
+                </Carousel.Slide>
+
+                <Carousel.Slide>
+                  <Box style={{height: "100%", display: "flex", justifyContent: "center"}}>
+                    <Paper radius="sm" style={{...projectCardStyles}} h={{base: '90%'}} shadow="lg">
+                      <Box style={{flexGrow: 1}}>
+                        <Title order={3} style={{...titleBorderRadius, padding: rem(20), paddingLeft: rem(30), background: "#2bdd66"}}>Mapa</Title>
+                        <Text style={{padding: rem(30)}}>A map app showing my travels - React, TypeScript, Next.js, Vercel</Text>
+                      </Box>
+                      <Button variant="filled"
+                        color="#2bdd66"
+                        rightSection={<IconArrowRight size={14} />}
+                        ml={rem(30)} mb={rem(30)}
+                        style={{color: "#000000"}}>
                           View App
                       </Button>
                     </Paper>
                   </Box>
                 </Carousel.Slide>
-                <Carousel.Slide>
-                <Box style={{height: "100%"}}>
-                  <Paper w="100%" style={{...projectCardStyles}} h={{base: '90%'}} shadow="lg">
-                    <Box style={{flexGrow: 1}}>
-                      <Title order={3}>Banderas</Title>
-                      <Text>Flag viewing & quiz app - React, TypeScript, Next.js, Vercel</Text>
-                    </Box>
-                    <Button variant="filled"
-                      color="#f06418"
-                      rightSection={<IconArrowRight size={14} />}>View App
-                    </Button>
-                  </Paper>
-                </Box>
-                </Carousel.Slide>
-                <Carousel.Slide>
-                <Box style={{height: "100%"}}>
-                  <Paper w="100%" style={{...projectCardStyles}} h={{base: '90%'}} shadow="lg">
-                    <Box style={{flexGrow: 1}}>
-                      <Title order={3}>Teux Deux</Title>
-                      <Text>Traditional Todo app - React, TypeScript, Redux, Next.js, Vercel</Text>
-                    </Box>
-                    <Button variant="filled"
-                      color="#f06418"
-                      rightSection={<IconArrowRight size={14} />}>View App
-                    </Button>
-                  </Paper>
-                </Box>
-                </Carousel.Slide>
-                <Carousel.Slide>
-                  <Box style={{height: "100%"}}>
-                    <Paper w="100%" style={{...projectCardStyles}} h={{base: '90%'}} shadow="lg">
-                      <Box style={{flexGrow: 1}}>
-                        <Title order={3}>Mapa</Title>
-                        <Text>A map app showing my travels - React, TypeScript, Next.js, Vercel</Text>
-                      </Box>
-                      <Button variant="filled"
-                        color="#f06418"
-                        rightSection={<IconArrowRight size={14} />}>View App
-                      </Button>
-                    </Paper>
-                  </Box>
-                </Carousel.Slide>
+                
               </Carousel>
             </Box>
           </Grid.Col>
