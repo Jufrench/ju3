@@ -187,7 +187,11 @@ export function LeadGrid() {
                       <Title order={3} style={{...titleBorderRadius, padding: rem(20), paddingLeft: rem(30), background: "#c91a25", color: "#ffffff"}}>Banderas</Title>
                       <Text style={{padding: rem(30)}}>Flag viewing & quiz app - React, TypeScript, Next.js, Vercel</Text>
                     </Box>
-                    <Button variant="filled"
+                    <Button
+                      component="a"
+                      href="https://banderas-one.vercel.app/"
+                      target="_blank"
+                      variant="filled"
                       color="#c91a25"
                       rightSection={<IconArrowRight size={14} />}
                       ml={rem(30)} mb={rem(30)}>
