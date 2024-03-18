@@ -186,12 +186,12 @@ export function LeadGrid() {
                 <Box style={{height: "100%", display: "flex", justifyContent: "center"}}>
                   <Paper radius="sm" style={{...projectCardStyles}} h={{base: '90%'}} shadow="lg">
                     <Box style={{flexGrow: 1}}>
-                      <Title order={3} style={{...titleBorderRadius, padding: rem(20), paddingLeft: rem(30), background: "#c91a25", color: "#ffffff"}}>Banderas</Title>
+                      <Title order={3} style={{...titleBorderRadius, padding: rem(20), paddingLeft: rem(30), background: "#c91a25", color: "#ffffff"}}>Flag Doyen</Title>
                       <Text style={{padding: rem(30)}}>Flag viewing & quiz app - React, TypeScript, Next.js, Vercel</Text>
                     </Box>
                     <Button
                       component="a"
-                      href="https://banderas-one.vercel.app/"
+                      href="https://flag-doyen.vercel.app/"
                       target="_blank"
                       variant="filled"
                       color="#c91a25"
