@@ -191,7 +191,7 @@ export function LeadGrid() {
                     </Box>
                     <Button
                       component="a"
-                      href="https://flag-doyen.vercel.app/"
+                      href="https://flagdoyen.vercel.app/"
                       target="_blank"
                       variant="filled"
                       color="#c91a25"
