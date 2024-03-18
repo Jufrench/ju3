@@ -161,7 +161,7 @@ export function LeadGrid() {
                 align="start"
                 style={{flex: 1, width: "100%"}}>
 
-                <Carousel.Slide>
+                {/* <Carousel.Slide>
                   <Box style={{height: "100%", display: "flex", justifyContent: "center"}}>
 
                     <Paper radius="sm" style={{...projectCardStyles}} h={{base: '90%'}} shadow="xl">
@@ -169,16 +169,18 @@ export function LeadGrid() {
                         <Title order={3} style={{...titleBorderRadius, padding: rem(20), paddingLeft: rem(30), background: "#f06418", color: "#fff"}}>Jotty</Title>
                         <Text style={{padding: rem(30)}}>A note taking app in the form of a rich text editor - React, TypeScript, & Next.js</Text>
                       </Box>
-                      <Button variant="filled"
+                      <Button
+                        disabled
+                        variant="filled"
                         color="#f06418"
                         rightSection={<IconArrowRight size={14} />}
                         ml={rem(30)} mb={rem(30)}>
-                          View App
+                          Coming soon...
                       </Button>
                     </Paper>
 
                   </Box>
-                </Carousel.Slide>
+                </Carousel.Slide> */}
                 
                 <Carousel.Slide>
                 <Box style={{height: "100%", display: "flex", justifyContent: "center"}}>
@@ -201,33 +203,38 @@ export function LeadGrid() {
                 </Box>
                 </Carousel.Slide>
 
-                <Carousel.Slide>
+                {/* <Carousel.Slide>
                 <Box style={{height: "100%", display: "flex", justifyContent: "center"}}>
                   <Paper radius="sm" style={{...projectCardStyles}} h={{base: '90%'}} shadow="lg">
                     <Box style={{flexGrow: 1}}>
                       <Title order={3} style={{...titleBorderRadius, padding: rem(20), paddingLeft: rem(30), background: "#d9d02f"}}>Teux Deux</Title>
                       <Text style={{padding: rem(30)}}>Traditional Todo app - React, TypeScript, Redux, Next.js, Vercel</Text>
                     </Box>
-                    <Button variant="filled"
+                    <Button
+                      disabled
+                      variant="filled"
                       color="#d9d02f"
                       rightSection={<IconArrowRight size={14} />}
                       ml={rem(30)} mb={rem(30)}
                       style={{color: "#000000"}}>
-                        View App
+                        Coming soon...
                     </Button>
                   </Paper>
                 </Box>
-                </Carousel.Slide>
+                </Carousel.Slide> */}
 
                 <Carousel.Slide>
                   <Box style={{height: "100%", display: "flex", justifyContent: "center"}}>
                     <Paper radius="sm" style={{...projectCardStyles}} h={{base: '90%'}} shadow="lg">
                       <Box style={{flexGrow: 1}}>
-                        <Title order={3} style={{...titleBorderRadius, padding: rem(20), paddingLeft: rem(30), background: "#2bdd66"}}>Mapa</Title>
+                        <Title order={3} style={{...titleBorderRadius, padding: rem(20), paddingLeft: rem(30), background: "#2bdd66"}}>MaiGlobo</Title>
                         <Text style={{padding: rem(30)}}>A map app showing my travels - React, TypeScript, Next.js, Vercel</Text>
                       </Box>
-                      <Button variant="filled"
+                      <Button
+                        component="a"
+                        href="https://maiglobo.vercel.app/"
                         color="#2bdd66"
+                        variant="filled"
                         rightSection={<IconArrowRight size={14} />}
                         ml={rem(30)} mb={rem(30)}
                         style={{color: "#000000"}}>
