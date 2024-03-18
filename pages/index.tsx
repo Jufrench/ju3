@@ -233,6 +233,7 @@ export function LeadGrid() {
                       <Button
                         component="a"
                         href="https://maiglobo.vercel.app/"
+                        target="_blank"
                         color="#2bdd66"
                         variant="filled"
                         rightSection={<IconArrowRight size={14} />}
